@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+    <title>Web Text Editor</title>
+</head>
+<body>
+    <nav class="toolbar non-selectable">
+        <button onclick=popup(1)>File</button>
+        <div id="popup-1" class="popup">
+            <div class="toolbar-button">
+                Open <span class="rtl">Ctrl + O</span>
+                <div class="inputFileWrapper">
+                    <input type="file" class="fileInput" id="fileInput">
+                </div>
+            </div>
+            <button onclick=save()>Save <span class="rtl">Ctrl + S</span></button>
+        </div>
+        <button onclick=popup(2)>Edit</button>
+        <div id="popup-2" class="popup">
+            <button onclick=undo()>Undo <span class="rtl">Ctrl + Z</span></button>
+            <button onclick=redo()>Redo <span class="rtl">Ctrl + Y</span></button>
+            <button onclick=search()><div class="strike">Find <span class="rtl">Ctrl + F</span></div></button>
+            <button onclick=replace()><div class="strike">Replace <span class="rtl">Ctrl + H</span></div></button>
+        </div>
+        <button onclick=popup(3)>Setting</button>
+        <div id="popup-3" class="popup">
+            <button onclick=changeFont()><div class="strike">Font</div></button>
+            <button onclick=themeChange(this,1)>Dark Mode</button>
+            <button onclick=test()><div class="strike">Experimental</div></button>
+        </div>
+    </nav>
+    <main class="editor-container">
+        <div class="gutter non-selectable">
+            <div data-gutter="1">1</div>
+        </div>
+        <textarea name="editor" id="editor" class="editor"></textarea>
+    </main>
+    <div class="editor-footer"></div>
+    <footer class="primary-footer non-selectable">
+        <p class="footer-paragraph">
+            Find me elsewhere on the web: 
+        </p>
+        <ul role="list" class="social-list">
+            <li>
+              <a target="_blank" href="https://www.linkedin.com/in/sanskar-awachar/">LinkedIn</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://codepen.io/sanskar-awachar-pen/">CodePen</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.freecodecamp.org/Sanskar-Awachar">freeCodeCamp</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://discord.com/users/1297932546545553499">Discord</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/Sanskar-Awachar-commits">GitHub</a>
+            </li>
+        </ul>
+        <p class="copyright">© 2024 Sanskar Awachar
+        </p>
+    </footer>
+    <!-- <div class="findInFile">
+        <input>
+        <div class="closeButton"></div>
+    </div>
+    <div class="replaceInFile">
+        <input>
+        <div class="closeButton"></div>
+    </div> -->
+</body>
+</html>
